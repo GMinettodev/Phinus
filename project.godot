@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Ladder",
+"language": "GDScript",
+"path": "res://Ladder.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player.gd"
+}, {
+"base": "Resource",
+"class": "PlayerMovementData",
+"language": "GDScript",
+"path": "res://PlayerMovementData.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Ladder": "",
+"Player": "",
+"PlayerMovementData": ""
 }
 
 [application]
@@ -63,6 +75,11 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Characters"
 
 [physics]
 
