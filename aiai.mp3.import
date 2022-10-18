@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/aiai.mp3-5cdd460c16da225c23de81913230cf6b.mp3str"
+
+[deps]
+
+source_file="res://aiai.mp3"
+dest_files=[ "res://.import/aiai.mp3-5cdd460c16da225c23de81913230cf6b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
