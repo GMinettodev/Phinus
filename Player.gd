@@ -94,7 +94,6 @@ func buffered_jump():
 	if Input.is_action_just_pressed("ui_up"):
 		buffered_jump = true
 		jumpBufferTimer.start()
-		$uui.play()
 
 func fast_fall():
 	if velocity.y > 0:
@@ -107,8 +106,6 @@ func input_jump():
 		if Input.is_action_just_pressed("ui_up") or buffered_jump:
 			velocity.y = moveData.JUMP_FORCE
 			buffered_jump = false
-			$uui.play()
-			
 
 func can_jump():
 	return is_on_floor() or coyote_jump

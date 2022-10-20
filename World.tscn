@@ -8,14 +8,14 @@
 [ext_resource path="res://Ladder.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MovingSpikeEnemy.tscn" type="PackedScene" id=7]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 63, -9, 0, 0, 0, 0, 63, -81, 0, 0, 0, 0, -36, -81, 0, 0, 0, 0, -36, -9, 0, 0, 0, 0, 63, -9 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -72, 0, 0, 0, 0, -99, -72, 0, 0, 0, 0, -99, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 66, -45, 0, 0, 0, 0, 66, 18, 0, 0, 0, 0, 66, -45 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, -36, 0, 0, 0, 0, 0, 18 )
 }
 
 [node name="World" type="Node2D"]
@@ -73,15 +73,12 @@ position = Vector2( 198, -90 )
 position = Vector2( 198, -108 )
 
 [node name="MovingSpikeEnemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 864, -99 )
-scale = Vector2( 1.09091, 1 )
-curve = SubResource( 1 )
+position = Vector2( 927, -108 )
+curve = SubResource( 5 )
 speed = 0
 
 [node name="MovingSpikeEnemy2" parent="." instance=ExtResource( 7 )]
-unique_name_in_owner = true
-position = Vector2( 27, -36 )
-scale = Vector2( 1.09091, 1 )
-curve = SubResource( 2 )
+position = Vector2( 99, -45 )
+curve = SubResource( 1 )
 animation_type = 1
 speed = 0
