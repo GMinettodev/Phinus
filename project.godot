@@ -36,6 +36,11 @@ config/name="2dPlatformer"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SoundPlayer="*res://Sounds/SoundPlayer.tscn"
+Events="*res://Events.gd"
+
 [display]
 
 window/size/width=320
