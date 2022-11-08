@@ -31,7 +31,7 @@ func apply_gravity():
 	velocity.y = min(velocity.y, 300)
 
 func move_state(input):
-	if is_on_ladder() and Input.is_action_pressed("ui_up"):
+	if is_on_ladder() and Input.is_action_just_pressed("ui_up"):
 		state = CLIMB
 	
 	apply_gravity()
