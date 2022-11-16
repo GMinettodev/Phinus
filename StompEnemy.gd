@@ -26,10 +26,12 @@ func fall_state(delta):
 		var collision_point = raycast.get_collision_point()
 		position.y = collision_point.y
 		state = LAND
-		timer.start(1.0)
+		timer.start(1)
 
 func land_state():
+	print (timer.time_left)
 	if timer.time_left == 0:
+		print ("oh no")
 		state = RISE
 
 func rise_state(delta):

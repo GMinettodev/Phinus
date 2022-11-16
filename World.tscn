@@ -100,4 +100,4 @@ position = Vector2( 1485, 9 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="StompEnemy" parent="." instance=ExtResource( 9 )]
-position = Vector2( 135, -63 )
+position = Vector2( 72, -72 )
