@@ -8,6 +8,10 @@ onready var start_position: = global_position
 onready var timer: = $Timer
 onready var raycast: = $RayCast2D
 onready var animatedsprite: = $AnimatedSprite
+onready var particles: = $Particles2D
+
+func _ready():
+	particles.one_shot = true
 
 func _physics_process(delta):
 	match state:
@@ -21,21 +25,21 @@ func hover_state():
 
 func fall_state(delta):
 	animatedsprite.play("Falling")
-	position.y += 100 * delta
+	global_position.y += 100 * delta
 	if raycast.is_colliding():
 		var collision_point = raycast.get_collision_point()
-		position.y = collision_point.y
+		global_position.y = collision_point.y
 		state = LAND
-		timer.start(1)
+		timer.start(1.0)
+		particles.emitting = true
 
 func land_state():
-	print (timer.time_left)
-	if timer.time_left == 0:
-		print ("oh no")
+	if timer.time_left < 0.02:
 		state = RISE
 
 func rise_state(delta):
+	particles.emitting = false
 	animatedsprite.play("Rising")
-	position.y = move_toward(position.y, start_position.y, 10 * delta)
-	if position.y == start_position.y:
+	global_position.y = move_toward(global_position.y, start_position.y, 30 * delta)
+	if global_position.y == start_position.y:
 		state = HOVER
