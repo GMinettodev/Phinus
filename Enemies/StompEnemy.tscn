@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Hitbox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://characters_packed.png" type="Texture" id=2]
-[ext_resource path="res://StompEnemy.gd" type="Script" id=3]
+[ext_resource path="res://Hitboxes/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Textures/characters_packed.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/StompEnemy.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -75,6 +75,7 @@ cast_to = Vector2( 0, 10 )
 position = Vector2( -3, 0 )
 emitting = false
 amount = 64
+lifetime = 2.0
 explosiveness = 1.0
 local_coords = false
 process_material = SubResource( 5 )
