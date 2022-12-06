@@ -10,6 +10,7 @@ var state = MOVE
 var double_jump = 1
 var buffered_jump = false
 var coyote_jump = false
+var on_door = false
 
 onready var animatedSprite: = $AnimatedSprite
 onready var ladderCheck: = $LadderCheck
@@ -114,10 +115,11 @@ func reset_double_jump():
 		double_jump = moveData.DOUBLE_JUMP_COUNT
 
 func input_jump():
-		if Input.is_action_just_pressed("ui_up") or buffered_jump:
-			SoundPlayer.play_sound(SoundPlayer.JUMP)
-			velocity.y = moveData.JUMP_FORCE
-			buffered_jump = false
+	if on_door: return
+	if Input.is_action_just_pressed("ui_up") or buffered_jump:
+		SoundPlayer.play_sound(SoundPlayer.JUMP)
+		velocity.y = moveData.JUMP_FORCE
+		buffered_jump = false
 
 func can_jump():
 	return is_on_floor() or coyote_jump
